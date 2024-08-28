@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.listBoxNumeros = new System.Windows.Forms.ListBox();
             this.BGenerar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,11 +39,13 @@
             this.textBoxDesde = new System.Windows.Forms.TextBox();
             this.textBoxHasta = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.checkBoxTodos = new System.Windows.Forms.CheckBox();
-            this.checkBoxPares = new System.Windows.Forms.CheckBox();
-            this.checkBoxImpares = new System.Windows.Forms.CheckBox();
-            this.checkBoxPrimos = new System.Windows.Forms.CheckBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.checkBoxPrimos = new System.Windows.Forms.CheckBox();
+            this.checkBoxImpares = new System.Windows.Forms.CheckBox();
+            this.checkBoxPares = new System.Windows.Forms.CheckBox();
+            this.checkBoxTodos = new System.Windows.Forms.CheckBox();
+            this.BSalir = new System.Windows.Forms.Button();
+            this.BBorrar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
@@ -58,12 +60,13 @@
             // 
             // BGenerar
             // 
-            this.BGenerar.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BGenerar.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.BGenerar.FlatAppearance.BorderSize = 2;
             this.BGenerar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BGenerar.Location = new System.Drawing.Point(52, 231);
+            this.BGenerar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BGenerar.Location = new System.Drawing.Point(38, 217);
             this.BGenerar.Name = "BGenerar";
-            this.BGenerar.Size = new System.Drawing.Size(101, 23);
+            this.BGenerar.Size = new System.Drawing.Size(111, 33);
             this.BGenerar.TabIndex = 1;
             this.BGenerar.Text = "Generar Funcion";
             this.BGenerar.UseVisualStyleBackColor = false;
@@ -118,6 +121,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.BBorrar);
             this.panel1.Controls.Add(this.chart1);
             this.panel1.Controls.Add(this.checkBoxPrimos);
             this.panel1.Controls.Add(this.checkBoxImpares);
@@ -135,38 +139,25 @@
             this.panel1.Size = new System.Drawing.Size(930, 397);
             this.panel1.TabIndex = 10;
             // 
-            // checkBoxTodos
+            // chart1
             // 
-            this.checkBoxTodos.AutoSize = true;
-            this.checkBoxTodos.Location = new System.Drawing.Point(168, 210);
-            this.checkBoxTodos.Name = "checkBoxTodos";
-            this.checkBoxTodos.Size = new System.Drawing.Size(56, 17);
-            this.checkBoxTodos.TabIndex = 10;
-            this.checkBoxTodos.Text = "Todos";
-            this.checkBoxTodos.UseVisualStyleBackColor = true;
-            this.checkBoxTodos.CheckedChanged += new System.EventHandler(this.checkBoxTodos_CheckedChanged);
-            // 
-            // checkBoxPares
-            // 
-            this.checkBoxPares.AutoSize = true;
-            this.checkBoxPares.Location = new System.Drawing.Point(168, 233);
-            this.checkBoxPares.Name = "checkBoxPares";
-            this.checkBoxPares.Size = new System.Drawing.Size(53, 17);
-            this.checkBoxPares.TabIndex = 11;
-            this.checkBoxPares.Text = "Pares";
-            this.checkBoxPares.UseVisualStyleBackColor = true;
-            this.checkBoxPares.CheckedChanged += new System.EventHandler(this.checkBoxPares_CheckedChanged);
-            // 
-            // checkBoxImpares
-            // 
-            this.checkBoxImpares.AutoSize = true;
-            this.checkBoxImpares.Location = new System.Drawing.Point(168, 256);
-            this.checkBoxImpares.Name = "checkBoxImpares";
-            this.checkBoxImpares.Size = new System.Drawing.Size(63, 17);
-            this.checkBoxImpares.TabIndex = 12;
-            this.checkBoxImpares.Text = "Impares";
-            this.checkBoxImpares.UseVisualStyleBackColor = true;
-            this.checkBoxImpares.CheckedChanged += new System.EventHandler(this.checkBoxImpares_CheckedChanged);
+            this.chart1.BackColor = System.Drawing.Color.DarkGray;
+            this.chart1.BorderlineColor = System.Drawing.Color.Black;
+            this.chart1.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
+            this.chart1.Location = new System.Drawing.Point(561, 93);
+            this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "numeros";
+            this.chart1.Series.Add(series3);
+            this.chart1.Size = new System.Drawing.Size(349, 264);
+            this.chart1.TabIndex = 14;
+            this.chart1.Text = "chart1";
             // 
             // checkBoxPrimos
             // 
@@ -179,25 +170,64 @@
             this.checkBoxPrimos.UseVisualStyleBackColor = true;
             this.checkBoxPrimos.CheckedChanged += new System.EventHandler(this.checkBoxPrimos_CheckedChanged);
             // 
-            // chart1
+            // checkBoxImpares
             // 
-            this.chart1.BackColor = System.Drawing.Color.DarkGray;
-            this.chart1.BorderlineColor = System.Drawing.Color.Black;
-            this.chart1.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(561, 93);
-            this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "numeros";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(349, 264);
-            this.chart1.TabIndex = 14;
-            this.chart1.Text = "chart1";
+            this.checkBoxImpares.AutoSize = true;
+            this.checkBoxImpares.Location = new System.Drawing.Point(168, 256);
+            this.checkBoxImpares.Name = "checkBoxImpares";
+            this.checkBoxImpares.Size = new System.Drawing.Size(63, 17);
+            this.checkBoxImpares.TabIndex = 12;
+            this.checkBoxImpares.Text = "Impares";
+            this.checkBoxImpares.UseVisualStyleBackColor = true;
+            this.checkBoxImpares.CheckedChanged += new System.EventHandler(this.checkBoxImpares_CheckedChanged);
+            // 
+            // checkBoxPares
+            // 
+            this.checkBoxPares.AutoSize = true;
+            this.checkBoxPares.Location = new System.Drawing.Point(168, 233);
+            this.checkBoxPares.Name = "checkBoxPares";
+            this.checkBoxPares.Size = new System.Drawing.Size(53, 17);
+            this.checkBoxPares.TabIndex = 11;
+            this.checkBoxPares.Text = "Pares";
+            this.checkBoxPares.UseVisualStyleBackColor = true;
+            this.checkBoxPares.CheckedChanged += new System.EventHandler(this.checkBoxPares_CheckedChanged);
+            // 
+            // checkBoxTodos
+            // 
+            this.checkBoxTodos.AutoSize = true;
+            this.checkBoxTodos.Location = new System.Drawing.Point(168, 210);
+            this.checkBoxTodos.Name = "checkBoxTodos";
+            this.checkBoxTodos.Size = new System.Drawing.Size(56, 17);
+            this.checkBoxTodos.TabIndex = 10;
+            this.checkBoxTodos.Text = "Todos";
+            this.checkBoxTodos.UseVisualStyleBackColor = true;
+            this.checkBoxTodos.CheckedChanged += new System.EventHandler(this.checkBoxTodos_CheckedChanged);
+            // 
+            // BSalir
+            // 
+            this.BSalir.BackColor = System.Drawing.Color.Red;
+            this.BSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BSalir.Location = new System.Drawing.Point(888, 436);
+            this.BSalir.Name = "BSalir";
+            this.BSalir.Size = new System.Drawing.Size(88, 25);
+            this.BSalir.TabIndex = 12;
+            this.BSalir.Text = "SALIR";
+            this.BSalir.UseVisualStyleBackColor = false;
+            this.BSalir.Click += new System.EventHandler(this.BSalir_Click);
+            // 
+            // BBorrar
+            // 
+            this.BBorrar.BackColor = System.Drawing.Color.IndianRed;
+            this.BBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BBorrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BBorrar.Location = new System.Drawing.Point(38, 256);
+            this.BBorrar.Name = "BBorrar";
+            this.BBorrar.Size = new System.Drawing.Size(111, 33);
+            this.BBorrar.TabIndex = 15;
+            this.BBorrar.Text = "BORRAR";
+            this.BBorrar.UseVisualStyleBackColor = false;
+            this.BBorrar.Click += new System.EventHandler(this.BBorrar_Click);
             // 
             // Form1
             // 
@@ -206,6 +236,7 @@
             this.BackColor = System.Drawing.Color.DarkGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1015, 473);
+            this.Controls.Add(this.BSalir);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "Lista de Numeros";
@@ -231,6 +262,8 @@
         private System.Windows.Forms.CheckBox checkBoxPares;
         private System.Windows.Forms.CheckBox checkBoxTodos;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Button BSalir;
+        private System.Windows.Forms.Button BBorrar;
     }
 }
 

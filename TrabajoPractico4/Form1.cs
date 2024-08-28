@@ -243,5 +243,22 @@ namespace TrabajoPractico4
                 checkBoxTodos.Checked = false;
             }
         }
+
+        private void BBorrar_Click(object sender, EventArgs e)
+        {
+            //Al presionar BORRAR se limpian todos los textbox y el grafico
+            textBoxDesde.Clear();
+            textBoxHasta.Clear();
+            listBoxNumeros.Items.Clear();
+
+            //Limpiar los puntos del gráfico antes de agregar nuevos elementos
+            chart1.Series["numeros"].Points.Clear();
+
+        }
+
+        private void BSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
