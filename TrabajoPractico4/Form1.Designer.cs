@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.listBoxNumeros = new System.Windows.Forms.ListBox();
             this.BGenerar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -35,11 +38,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxDesde = new System.Windows.Forms.TextBox();
             this.textBoxHasta = new System.Windows.Forms.TextBox();
-            this.BNumerosPares = new System.Windows.Forms.Button();
-            this.BNumerosImpares = new System.Windows.Forms.Button();
-            this.BNumerosPrimos = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.checkBoxTodos = new System.Windows.Forms.CheckBox();
+            this.checkBoxPares = new System.Windows.Forms.CheckBox();
+            this.checkBoxImpares = new System.Windows.Forms.CheckBox();
+            this.checkBoxPrimos = new System.Windows.Forms.CheckBox();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // listBoxNumeros
@@ -47,7 +53,7 @@
             this.listBoxNumeros.FormattingEnabled = true;
             this.listBoxNumeros.Location = new System.Drawing.Point(244, 93);
             this.listBoxNumeros.Name = "listBoxNumeros";
-            this.listBoxNumeros.Size = new System.Drawing.Size(301, 225);
+            this.listBoxNumeros.Size = new System.Drawing.Size(301, 264);
             this.listBoxNumeros.TabIndex = 0;
             // 
             // BGenerar
@@ -55,7 +61,7 @@
             this.BGenerar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.BGenerar.FlatAppearance.BorderSize = 2;
             this.BGenerar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BGenerar.Location = new System.Drawing.Point(114, 208);
+            this.BGenerar.Location = new System.Drawing.Point(52, 231);
             this.BGenerar.Name = "BGenerar";
             this.BGenerar.Size = new System.Drawing.Size(101, 23);
             this.BGenerar.TabIndex = 1;
@@ -85,7 +91,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(213, 32);
+            this.label3.Location = new System.Drawing.Point(380, 25);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(196, 25);
             this.label3.TabIndex = 4;
@@ -108,50 +114,16 @@
             this.textBoxHasta.TabIndex = 6;
             this.textBoxHasta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxHasta_KeyPress);
             // 
-            // BNumerosPares
-            // 
-            this.BNumerosPares.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.BNumerosPares.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BNumerosPares.Location = new System.Drawing.Point(114, 237);
-            this.BNumerosPares.Name = "BNumerosPares";
-            this.BNumerosPares.Size = new System.Drawing.Size(101, 23);
-            this.BNumerosPares.TabIndex = 7;
-            this.BNumerosPares.Text = "Numeros Pares";
-            this.BNumerosPares.UseVisualStyleBackColor = false;
-            this.BNumerosPares.Click += new System.EventHandler(this.BNumerosPares_Click);
-            // 
-            // BNumerosImpares
-            // 
-            this.BNumerosImpares.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.BNumerosImpares.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BNumerosImpares.Location = new System.Drawing.Point(114, 266);
-            this.BNumerosImpares.Name = "BNumerosImpares";
-            this.BNumerosImpares.Size = new System.Drawing.Size(101, 23);
-            this.BNumerosImpares.TabIndex = 8;
-            this.BNumerosImpares.Text = "Numeros Impares";
-            this.BNumerosImpares.UseVisualStyleBackColor = false;
-            this.BNumerosImpares.Click += new System.EventHandler(this.BNumerosImpares_Click);
-            // 
-            // BNumerosPrimos
-            // 
-            this.BNumerosPrimos.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.BNumerosPrimos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BNumerosPrimos.Location = new System.Drawing.Point(114, 295);
-            this.BNumerosPrimos.Name = "BNumerosPrimos";
-            this.BNumerosPrimos.Size = new System.Drawing.Size(101, 23);
-            this.BNumerosPrimos.TabIndex = 9;
-            this.BNumerosPrimos.Text = "Numeros Primos";
-            this.BNumerosPrimos.UseVisualStyleBackColor = false;
-            this.BNumerosPrimos.Click += new System.EventHandler(this.BNumerosPrimos_Click);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.BNumerosPrimos);
+            this.panel1.Controls.Add(this.chart1);
+            this.panel1.Controls.Add(this.checkBoxPrimos);
+            this.panel1.Controls.Add(this.checkBoxImpares);
+            this.panel1.Controls.Add(this.checkBoxPares);
+            this.panel1.Controls.Add(this.checkBoxTodos);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.BNumerosImpares);
-            this.panel1.Controls.Add(this.BNumerosPares);
             this.panel1.Controls.Add(this.textBoxHasta);
             this.panel1.Controls.Add(this.textBoxDesde);
             this.panel1.Controls.Add(this.label2);
@@ -160,8 +132,72 @@
             this.panel1.Controls.Add(this.listBoxNumeros);
             this.panel1.Location = new System.Drawing.Point(46, 26);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(625, 376);
+            this.panel1.Size = new System.Drawing.Size(930, 397);
             this.panel1.TabIndex = 10;
+            // 
+            // checkBoxTodos
+            // 
+            this.checkBoxTodos.AutoSize = true;
+            this.checkBoxTodos.Location = new System.Drawing.Point(168, 210);
+            this.checkBoxTodos.Name = "checkBoxTodos";
+            this.checkBoxTodos.Size = new System.Drawing.Size(56, 17);
+            this.checkBoxTodos.TabIndex = 10;
+            this.checkBoxTodos.Text = "Todos";
+            this.checkBoxTodos.UseVisualStyleBackColor = true;
+            this.checkBoxTodos.CheckedChanged += new System.EventHandler(this.checkBoxTodos_CheckedChanged);
+            // 
+            // checkBoxPares
+            // 
+            this.checkBoxPares.AutoSize = true;
+            this.checkBoxPares.Location = new System.Drawing.Point(168, 233);
+            this.checkBoxPares.Name = "checkBoxPares";
+            this.checkBoxPares.Size = new System.Drawing.Size(53, 17);
+            this.checkBoxPares.TabIndex = 11;
+            this.checkBoxPares.Text = "Pares";
+            this.checkBoxPares.UseVisualStyleBackColor = true;
+            this.checkBoxPares.CheckedChanged += new System.EventHandler(this.checkBoxPares_CheckedChanged);
+            // 
+            // checkBoxImpares
+            // 
+            this.checkBoxImpares.AutoSize = true;
+            this.checkBoxImpares.Location = new System.Drawing.Point(168, 256);
+            this.checkBoxImpares.Name = "checkBoxImpares";
+            this.checkBoxImpares.Size = new System.Drawing.Size(63, 17);
+            this.checkBoxImpares.TabIndex = 12;
+            this.checkBoxImpares.Text = "Impares";
+            this.checkBoxImpares.UseVisualStyleBackColor = true;
+            this.checkBoxImpares.CheckedChanged += new System.EventHandler(this.checkBoxImpares_CheckedChanged);
+            // 
+            // checkBoxPrimos
+            // 
+            this.checkBoxPrimos.AutoSize = true;
+            this.checkBoxPrimos.Location = new System.Drawing.Point(168, 279);
+            this.checkBoxPrimos.Name = "checkBoxPrimos";
+            this.checkBoxPrimos.Size = new System.Drawing.Size(57, 17);
+            this.checkBoxPrimos.TabIndex = 13;
+            this.checkBoxPrimos.Text = "Primos";
+            this.checkBoxPrimos.UseVisualStyleBackColor = true;
+            this.checkBoxPrimos.CheckedChanged += new System.EventHandler(this.checkBoxPrimos_CheckedChanged);
+            // 
+            // chart1
+            // 
+            this.chart1.BackColor = System.Drawing.Color.DarkGray;
+            this.chart1.BorderlineColor = System.Drawing.Color.Black;
+            this.chart1.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(561, 93);
+            this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "numeros";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(349, 264);
+            this.chart1.TabIndex = 14;
+            this.chart1.Text = "chart1";
             // 
             // Form1
             // 
@@ -169,12 +205,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(721, 427);
+            this.ClientSize = new System.Drawing.Size(1015, 473);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "Lista de Numeros";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -188,10 +225,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxDesde;
         private System.Windows.Forms.TextBox textBoxHasta;
-        private System.Windows.Forms.Button BNumerosPares;
-        private System.Windows.Forms.Button BNumerosImpares;
-        private System.Windows.Forms.Button BNumerosPrimos;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.CheckBox checkBoxPrimos;
+        private System.Windows.Forms.CheckBox checkBoxImpares;
+        private System.Windows.Forms.CheckBox checkBoxPares;
+        private System.Windows.Forms.CheckBox checkBoxTodos;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
 
