@@ -92,5 +92,11 @@
   <ItemGroup>
     <None Include="Resources\user_2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black-brick-wall-textured-background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo-textura-hormigon-negro-grunge.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

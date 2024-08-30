@@ -63,6 +63,26 @@ namespace TrabajoPractico5.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap black_brick_wall_textured_background {
+            get {
+                object obj = ResourceManager.GetObject("black-brick-wall-textured-background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondo_textura_hormigon_negro_grunge {
+            get {
+                object obj = ResourceManager.GetObject("fondo-textura-hormigon-negro-grunge", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap tekstura_fon_metal_chernyy {
             get {
                 object obj = ResourceManager.GetObject("tekstura-fon-metal-chernyy", resourceCulture);
